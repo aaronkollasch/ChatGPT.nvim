@@ -26,6 +26,7 @@ function M.defaults()
       loading_text = "Loading, please wait ...",
       question_sign = "", -- 🙂
       answer_sign = "ﮧ", -- 🤖
+      tokens_border = { "", "" },
       max_line_length = 120,
       sessions_window = {
         border = {

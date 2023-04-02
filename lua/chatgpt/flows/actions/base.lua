@@ -1,4 +1,5 @@
 local classes = require("chatgpt.common.classes")
+local Config = require("chatgpt.config")
 local Signs = require("chatgpt.signs")
 local Spinner = require("chatgpt.spinner")
 local Utils = require("chatgpt.utils")
@@ -76,9 +77,9 @@ function BaseAction:render_spinner(state)
       start_row, start_col = get_selection_center(start_row, start_col, end_row, end_col)
       self.extmark_id = vim.api.nvim_buf_set_extmark(bufnr, namespace_id, start_row, 0, {
         virt_text = {
-          { "", "ChatGPTTotalTokensBorder" },
+          { Config.options.chat.tokens_border[1], "ChatGPTTotalTokensBorder" },
           { state .. " Processing, please wait ...", "ChatGPTTotalTokens" },
-          { "", "ChatGPTTotalTokensBorder" },
+          { Config.options.chat.tokens_border[2], "ChatGPTTotalTokensBorder" },
           { " ", "" },
         },
         virt_text_pos = "eol",
