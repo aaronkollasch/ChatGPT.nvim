@@ -717,6 +717,19 @@ function Chat:open()
     end,
   })
 
+  if Config.options.settings_window.border.highlight then
+    self.settings_panel.border:set_highlight(Config.options.settings_window.border.highlight)
+  end
+  if Config.options.sessions_window.border.highlight then
+    self.sessions_panel.border:set_highlight(Config.options.sessions_window.border.highlight)
+  end
+  if Config.options.popup_window.border.highlight then
+    self.chat_window.border:set_highlight(Config.options.popup_window.border.highlight)
+  end
+  if Config.options.chat_input.border.highlight then
+    self.chat_input.border:set_highlight(Config.options.chat_input.border.highlight)
+  end
+
   self.layout = Layout(self:get_layout_params())
 
   -- yank last answer
